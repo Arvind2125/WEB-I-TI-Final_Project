@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://kit.fontawesome.com/c121f5569d.js" crossorigin="anonymous"></script>
+    <title>Shark Industri</title>
+    <link rel="icon" href="img/sharkicon.png">
+
+</head>
+<body>
+    <div class="bg-[#303745] text-white hidden lg:block">
+        <div class="flex justify-between max-w-[1100px] mx-auto py-2">
+            <p><i class="fa-regular fa-handshake text-[#f1632d]"></i> Welcome to PT. Sharprindo Dinamika Prima</p>
+            <div class="flex gap-5">
+                <p>Follow us</p>
+                <a class="hover:text-[#f1632d] transition-colors duration-300" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a class="hover:text-[#f1632d] transition-colors duration-300" href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a class="hover:text-[#f1632d] transition-colors duration-300" href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a class="hover:text-[#f1632d] transition-colors duration-300" href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex justify-between max-w-[1150px] my-5 mx-auto py-2">
+        <a href="#">
+            <img class="w-64 lg:mx-0 mx-auto" src="img/Logo Shark.jpg" alt="logo shark">
+        </a>
+        <div class="gap-14 hidden lg:flex">
+            <div class="flex flex-col items-end">
+                <div class="flex items-center gap-2">
+                    <a class="text-[#f1632d] hover:text-[#303745] transition-colors duration-300" href="#">+6221- 590 3411</a>
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a class="text-[#f1632d] hover:text-[#303745] transition-colors duration-300" href="#">sharkofficialstore@shark.co.id</a>
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+            </div>
+            <img class="w-40 h-20" src="img/logo tuv.png" alt="logo tuv">
+        </div>
+    </div>
+    
+    <div class="flex mx-auto max-w-[1200px] static justify-between text-white z-10 bg-black md:bg-white">
+        <div class="relative w-full">
+            <button id="menu-toggle" class="md:hidden bg-[#f1632d] text-white p-2 rounded mx-auto md:mx-0">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="menu" class="hidden md:flex gap-10 bg-black py-6 w-full text-center px-10 transition-all">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="biodata.html">BIODATA</a></li>
+                <li><a href="freepage.html">FREEPAGE</a></li>
+                <li><a href="posts.html">POST</a></li>
+                <li><a href="#">CAREER</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+        </div>
+        <a class="bg-[#f1632d] w-36 flex items-center justify-center" href="#">GET A QUOTE</a>
+    </div>
+    
+    <!-- Mobile Menu -->
+     
+    <div id="mobile-menu" class="md:hidden bg-black text-white hidden mx-auto">
+        <ul class="flex flex-col items-center py-4">
+            <li><a class="py-2" href="index.html">HOME</a></li>
+            <li><a class="py-2" href="contact.html">CONTACT US</a></li>
+            <li><a class="py-2" href="biodata.html">BIODATA</a></li>
+            <li><a href="freepage.html">FREEPAGE</a></li>
+            <li><a class="py-2" href="posts.html">POST</a></li>
+            <li><a class="py-2" href="#">CAREER</a></li>
+            <li><a class="py-2" href="#">BLOG</a></li>
+            <li><a class="py-2" href="#">ABOUT US</a></li>
+            <li><a class="py-2" href="#">CONTACT US</a></li>
+        </ul>
+    </div>
+
+    <script src="img/navbarLogic.js"></script>
+
+    <div class="w-full mx-auto group">
+        <!-- Slideshow Container -->
+        <div id="slideshow" class="relative overflow-hidden rounded-lg shadow-lg">
+            <!-- Slides -->
+            <div class="slide duration-700 ease-in-out" data-carousel-item>
+                <img src="img/EXPIC.jpg" 
+                     alt="Slide 1" 
+                     class="w-full h-full object-cover">
+            </div>
+            
+            <div class="slide duration-700 ease-in-out hidden" data-carousel-item>
+                <img src="img/EXPIC2.jpg" 
+                     alt="Slide 2" 
+                     class="w-full h-full object-cover">
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <button onclick="changeSlide(-1)" 
+                    class="absolute top-1/2 left-4 transform -translate-y-1/2 
+                            text-[#f1632d] border border-[#f1632d] p-5
+                           -translate-x-20 group-hover:translate-x-20 transition-all duration-500 z-10 ">
+                &#10094;
+            </button>
+            
+            <button onclick="changeSlide(1)"
+                    class="absolute top-1/2 right-4 transform -translate-y-1/2 
+                            text-[#f1632d] border border-[#f1632d] p-5
+                           translate-x-20 group-hover:-translate-x-20 transition-all duration-500 z-10">
+                &#10095;
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            
+            // Wrap around slide index
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.add('hidden');
+            }
+            
+            // Show current slide
+            slides[slideIndex - 1].classList.remove('hidden');
+        }
+
+        function autoSlide() {
+            changeSlide(1);
+        }
+        setInterval(autoSlide, 4000);
+    </script>
+
+<div class="container mx-auto py-8 mb-40">
+    <h1 class="text-center text-3xl font-bold mb-4">
+     OUR PRODUCT
+    </h1>
+    <div class="flex justify-center mb-8">
+     <div class="border-b-2 border-orange-500 w-24">
+     </div>
+    </div>
+    <div class="flex justify-center space-x-8 mb-8">
+     <a class="text-orange-500 font-bold" href="#">
+      ALL PRODUCT
+     </a>
+     <a class="text-gray-800 font-bold" href="#">
+      SCREW COMPRESSOR
+     </a>
+     <a class="text-gray-800 font-bold" href="#">
+      SCREW AIR COMPRESSOR
+     </a>
+     <a class="text-gray-800 font-bold" href="#">
+      PISTON COMPRESSOR
+     </a>
+     <a class="text-gray-800 font-bold" href="#">
+      AIR PURIFICATION
+     </a>
+    </div>
+    <!-- regularimg -->
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1200px] mx-auto">
+     <div class="text-center">
+      <img alt="Piston Compressor" class="mx-auto" height="150" src="img/compressor.png"/>
+     
+     </div>
+     <div class="text-center">
+      <img alt="Regular Screw" class="mx-auto " height="150" src="img/regular screw.png"/>
+      
+     </div>
+     <div class="text-center">
+      <img alt="SOT/MCC" class="mx-auto " height="150" src="img/sot.jpg"/>
+      
+     </div>
+     <div class="text-center">
+      <img alt="Air Dryer &amp; Air Filter" class="mx-auto" height="150" src="img/airdryer.jpg"/>
+      
+     </div>
+     <div class="text-center">
+      <img alt="Dessicant Dryer" class="mx-auto " height="150" src="img/dessicant.jpg"/>
+      
+     </div>
+     <div class="text-center">
+      <img alt="Permanent Magnet Screw" class="mx-auto" height="150" src="img/Permannent_Magnet.jpg"/>
+      
+     </div>
+     <div class="text-center">
+      <img alt="SVC Series" class="mx-auto " height="150" src="img/svc series.jpg"/>
+     </div>
+     <div class="text-center">
+      <img alt="Oil Free Screw" class="mx-auto" height="150" src="img/oil free screw.jpg"/>
+     </div>
+    </div>
+   </div>
+
+   <div class="container mx-auto px-4 py-8">
+    <!-- Our Solution Section -->
+    <div class="text-center mb-8">
+     <h2 class="text-2xl font-bold">
+      OUR SOLUTION
+     </h2>
+     <div class="w-16 h-1 bg-orange-500 mx-auto mt-2 ">
+     </div>
+    </div>
+   
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[1200px] mx-auto">
+      <div class="relative">
+       <img alt="Bottles in a production line" class="w-full h-auto" height="200" src="img/pengering udara.jpg" width="300"/>
+       <div class="absolute bottom-0 left-0 right-0 bg-orange-500 text-white text-center py-2">
+        Solusi Untuk Industri PET Blowing
+       </div>
+      </div>
+      <div class="relative">
+       <img alt="Air drying and filtering equipment" class="w-full h-auto" height="200" src="img/Expertise.jpg" width="300"/>
+       <div class="absolute bottom-0 left-0 right-0 bg-orange-500 text-white text-center py-2">
+        Solusi Pengeringan Dan Penyaringan Udara
+       </div>
+      </div>
+      <div class="relative">
+       <img alt="Hand writing 'EXPERT'" class="w-full h-auto" height="200" src="img/botol.jpeg" width="300"/>
+       <div class="absolute bottom-0 left-0 right-0 bg-orange-500 text-white text-center py-2">
+        Spesialisasi Shark Industrial Air Solutions
+       </div>
+      </div>
+     </div>
+    </div>
+    <div>
+    <!-- Our Customer Section -->
+    <div class="text-center mb-8 ">
+     <h2 class="text-2xl font-bold">
+      OUR CUSTOMER
+     </h2>
+     <div class="w-16 h-1 bg-orange-500 mx-auto mt-2">
+     </div>
+    </div>
+    <div class="flex justify-between items-center">
+     
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[1200px] mx-auto">
+      <div class="relative">
+       <img alt="Various milk products" class="w-full h-auto" height="200" src="img/customer1.jpeg" width="300"/>
+       <div class="absolute bottom-0 left-0 right-0 bg-orange-500 text-white text-center py-2">
+        PT. Industri Susu Alam Murni
+       </div>
+      </div>
+      <div class="relative">
+       <img alt="Company logo with a golden wreath" class="w-full h-auto" height="200" src="img/customer2.jpeg" width="300"/>
+       <div class="absolute bottom-0 left-0 right-0 bg-orange-500 text-white text-center py-2">
+        PT. Sumber Graha Sejahtera
+       </div>
+      </div>
+      <div class="relative">
+       <img alt="Company logo with text 'HICOOP'" class="w-full h-auto" height="200" src="img/customer3.png" width="300"/>
+       <div class="absolute bottom-0 left-0 right-0 bg-orange-500 text-white text-center py-2">
+        PT. Vista Mandiri Cemerlang
+       </div>
+      </div>
+     </div>
+     
+    </div>
+
+    
+    <div class="container mx-auto px-4 py-8 mb-5">
+        <h1 class="text-center text-3xl font-bold">
+            CAREER
+        </h1>
+        <div class="flex justify-center mb-40">
+            <div class="w-16 h-1 bg-orange-500">
+            </div>
+        </div>
+    </div>
+        <div class="container mx-auto py-12">
+        <h1 class="text-center text-3xl font-bold mb-6">OUR BLOG POSTS</h1>
+        <div class="flex justify-center mb-6">
+            <div class="h-1 w-16 bg-orange-500"></div>
+        </div>
+        <div class="flex justify-end items-center mb-6 space-x-2 ">
+            <button class="p-2 bg-white border border-gray-300 rounded-full shadow-md">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="p-2 bg-white border border-gray-300 rounded-full shadow-md">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Double Stage Screw Compressor - Super Energy Saving" class="w-full h-48 object-cover"
+                        height="400"
+                        src="img/pembersihan cooler.jpeg"
+                        width="600"/>
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-orange-500 text-black text-xs font-bold w-12 h-12 flex flex-col items-center justify-center rounded">
+                            <span>26</span>
+                            <span>Mar</span>
+                        </div>
+                        <div class="ml-auto">
+                            <i class="far fa-heart text-gray-400"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-lg font-bold mb-2">Double Stage Screw Compressor - Super Energy Saving</h2>
+                    <p class="text-gray-600 mb-4">Biaya energi yang semakin mahal membuat kalangan industri berpacu untuk
+                        bisa berhemat. Kompressor adalah mesin</p>
+                    <a class="text-black font-bold" href="#">READ MORE <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Pressure Vs Flow Rate Dalam Pemilihan Air Compressor" class="w-full h-48 object-cover"
+                        height="400"
+                        src="img/Air-end.jpeg"
+                        width="600"/>
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-orange-500 text-black text-xs font-bold w-12 h-12 flex flex-col items-center justify-center rounded">
+                            <span>26</span>
+                            <span>Mar</span>
+                        </div>
+                        <div class="ml-auto">
+                            <i class="far fa-heart text-gray-400"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-lg font-bold mb-2">Pressure Vs Flow Rate Dalam Pemilihan Air Compressor</h2>
+                    <p class="text-gray-600 mb-4">Setiap kompressor didesain sesuai peruntukkannya untuk menghasilkan tekanan
+                        dan volume udara tertentu. Kompressor yang didesain untuk</p>
+                    <a class="text-black font-bold" href="#">READ MORE <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img alt="Kegunaan Air Receiver Tank" class="w-full h-48 object-cover" height="400"
+                        src="img/sbm-10-hp.jpeg"
+                        width="600"/>
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-orange-500 text-black text-xs font-bold w-12 h-12 flex flex-col items-center justify-center rounded">
+                            <span>26</span>
+                            <span>Mar</span>
+                        </div>
+                        <div class="ml-auto">
+                            <i class="far fa-heart text-gray-400"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-lg font-bold mb-2">Kegunaan Air Receiver Tank</h2>
+                    <p class="text-gray-600 mb-4">Setiap kompressor udara umumnya dilengkapi dengan air receiver tank atau
+                        tabung angin dengan ukuran bervariasi</p>
+                    <a class="text-black font-bold" href="#">READ MORE <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="container mx-auto px-4 py-8 max-w-[1200px]">
+            <div class="text-center mb-8">
+             <h1 class="text-3xl font-bold">
+              ABOUT US
+             </h1>
+             <div class="w-16 h-1 bg-orange-500 mx-auto my-2">
+             </div>
+             <p class="text-gray-600">
+              Our Company Profile?
+             </p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center">
+             <div class="md:w-1/2 p-4">
+              <img alt="A construction worker in an orange safety vest and white hard hat working on a laptop at a construction site" class="w-full h-auto" height="400" src="img/laptopguy.jpeg" width="600"/>
+             </div>
+             <div class="md:w-1/2 p-4">
+              <div class="flex items-center bg-black text-white p-4">
+               <span class="flex-grow">
+                About us
+               </span>
+               <div class="bg-orange-500 p-2">
+                <i class="fas fa-play">
+                </i>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+
+           <div class="container mx-auto px-4 py-8 max-w-[1200px]">
+            <h1 class="text-3xl font-bold text-center mb-2">OUR CONTACT DETAILS</h1>
+            <div class="flex justify-center mb-4">
+                <div class="border-b-4 border-orange-500 w-16"></div>
+            </div>
+            <p class="text-center mb-8">Jika ada pertanyaan maupun saran, silahkan isi formulir berikut untuk menghubungi kami</p>
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-phone-alt text-orange-500 text-2xl mr-4"></i>
+                        <span>+6221- 590 3411</span>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-envelope text-orange-500 text-2xl mr-4"></i>
+                        <span>sharkofficialstore@shark.co.id</span>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-globe text-orange-500 text-2xl mr-4"></i>
+                        <span>www.shark.co.id</span>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="font-bold">Kantor Pusat</h2>
+                        <p>
+                            Jl. Industri Raya Blok A No.6
+                            <br/>
+                            Zona Industri Keroncong Jatiuwung,
+                            <br/>
+                            Tangerang - Banten
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="font-bold">Cabang Cikarang</h2>
+                        <p>
+                            Jl. Majapahit, Ruko Magnetica Square Blok B no.1. Cikarang Selatan, Cikarang
+                            <br/>
+                            Tel. 0811 9926 680 - 0812 8607 7048
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="font-bold">Cabang Semarang</h2>
+                        <p>
+                            Jl. Boulevard Citraland
+                            <br/>
+                            Komplek BSB Ruko Ivy Arcadia A1. No. 25, Semarang, Jawa Tengah
+                            <br/>
+                            Tel. +62 812-8455-0862
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="font-bold">Cabang Surabaya</h2>
+                        <p>
+                            Pergudangan Margomulyo Permai Sentral Blok C No 17 Surabaya
+                            <br/>
+                            Tel. 031-57485171
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.742264073073!2d106.618348316019!3d-6.178635662265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4201b1b1b1b1b1%3A0x1b1b1b1b1b1b1b1b!2sPT.%20Sharprindo%20Dinamika%20Prima!5e0!3m2!1sen!2sid!4v1634567890123!5m2!1sen!2sid"
+                        width="600"
+                        height="400"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto p-4 max-w-[1200px] mb-40">
+            <h1 class="text-2xl font-bold mb-4">Sales Representative:</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="border-l-4 border-gray-300 pl-4">
+                    <p class="font-semibold"><i class="fas fa-map-marker-alt"></i> Jawabarat, Sumatera</p>
+                    <p><i class="fas fa-user"></i> Wie Min</p>
+                    <p><i class="fas fa-envelope"></i> wei.min@shark.co.id</p>
+                    <p class="text-red-500"><i class="fas fa-phone"></i> 6281288333183</p>
+                </div>
+                <div class="border-l-4 border-gray-300 pl-4">
+                    <p class="font-semibold"><i class="fas fa-map-marker-alt"></i> Jakarta, Tangerang, Serang</p>
+                    <p><i class="fas fa-user"></i> Sendi</p>
+                    <p><i class="fas fa-envelope"></i> sendi@shark.co.id</p>
+                    <p class="text-red-500"><i class="fas fa-phone"></i> 6281210202369</p>
+                </div>
+                <div class="border-l-4 border-gray-300 pl-4">
+                    <p class="font-semibold"><i class="fas fa-map-marker-alt"></i> Jawa Timur, Bali, Sulawesi, Jawa Tengah</p>
+                    <p><i class="fas fa-user"></i> Agung Bintoro</p>
+                    <p><i class="fas fa-envelope"></i> agung.bintoro@shark.co.id</p>
+                    <p class="text-red-500"><i class="fas fa-phone"></i> 6281284550862</p>
+                </div>
+                <div class="border-l-4 border-gray-300 pl-4">
+                    <p class="font-semibold"><i class="fas fa-map-marker-alt"></i> Jawabarat, Sumatera</p>
+                    <p><i class="fas fa-user"></i> Rinto Sutikno</p>
+                    <p><i class="fas fa-envelope"></i> rinto.sutikno@shark.co.id</p>
+                    <p class="text-red-500"><i class="fas fa-phone"></i> 6281286077048</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-gray-200 p-8 rounded-lg mx-auto shadow-lg max-w-[1200px] mb-40">
+            <h2 class="text-2xl font-semibold mb-6">Send me a message</h2>
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" placeholder="Enter name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" placeholder="Enter email" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile</label>
+                        <input type="text" id="mobile" placeholder="Enter mobile phone" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                        <input type="text" id="subject" placeholder="Enter Your Subject Massage" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                    <textarea id="message" rows="4" placeholder="Enter your message" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50"></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit" class="bg-teal-400 text-white px-6 py-2 rounded-md shadow-sm hover:bg-teal-500 focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-50">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <footer class="bg-gray-800 py-4 ">
+        <div class="mx-auto flex justify-between items-center max-w-[1200px]">
+            <p class="text-gray-400 text-sm">
+                © 2019 <span class="text-blue-500">Shark</span>. All Rights Reserved.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">
+                   <img class="w-8" src="img/logofti.png" alt="logofti">
+                </a>
+                <a href="https://unai.edu/" class="text-gray-400 hover:text-white">
+                    <img class="w-8" src="img/logounai.png" alt="logounai">
+                </a>
+                <a href="https://jurnal.unai.edu/index.php/teika" class="text-gray-400 hover:text-white">
+                    <img class="w-8" src="img/logounai.png" alt="logofti">
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
